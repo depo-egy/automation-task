@@ -16,6 +16,7 @@ driver.get(url)
 answer_btn = driver.find_element_by_class_name('WriteAnswerPrimaryActionItem')
 answer_btn.click()
 
+sleep(10)
 driver.execute_script("document.getElementsByClassName('content')[2].innerHTML = 'whatever'")
 
 b1 = driver.find_element_by_id('__w2_wjNBfCO525_inline_editor_submit')
