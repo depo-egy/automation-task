@@ -8,8 +8,9 @@ Just Run the app and an automated window from google chrome will be generated> I
 
 ## Prerequisites
 
-version1: 1) Chrome drive.
-          2) Need to login Manually
+version1: <br>
+1) Chrome drive.
+2) Need to login Manually
  
 
 ## Deployment
