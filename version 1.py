@@ -1,8 +1,6 @@
 from selenium import webdriver
 from time import sleep
-from selenium.common.exceptions import ElementNotVisibleException
-from selenium.common.exceptions import ElementNotInteractableException
-from selenium.common.exceptions import JavascriptException
+
 
 driver = webdriver.Chrome('D:/Programs/chromedriver')
 
@@ -22,9 +20,12 @@ driver.execute_script("document.getElementsByClassName('content')[2].innerHTML =
 #sleep(10)
 #b1 = driver.find_element_by_class_name('form_buttons')
 
-driver.find_element_by_xpath("//div[@class='form_buttons']//a[@class='submit_button']").click()
+#driver.find_element_by_xpath("//div[@class='form_buttons']//a[@class='submit_button']").click()
 
+click = driver.find_elements_by_xpath("//a[@class='submit_button']")
+click[2].click()
 
+driver.quit()
 
 
 
