@@ -16,13 +16,32 @@ driver.get(url)
 answer_btn = driver.find_element_by_class_name('WriteAnswerPrimaryActionItem')
 answer_btn.click()
 
-sleep(10)
+sleep(8)
 driver.execute_script("document.getElementsByClassName('content')[2].innerHTML = 'whatever'")
 
-b1 = driver.find_element_by_id('__w2_wjNBfCO525_inline_editor_submit')
+#sleep(10)
+#b1 = driver.find_element_by_class_name('form_buttons')
+
+driver.find_element_by_xpath("//div[@class='form_buttons']//a[@class='submit_button']").click()
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+b1 = driver.find_element_by_xpath("//div[@class='form_buttons']//a[@class='submit_button']")
+b1 = driver.find_element_by_xpath("//div[@class='form_buttons']//a[@id='__w2_w2UMvuvK25_inline_editor_submit']")
+sleep(5)
 b1.click()
-
-
+'''
 #comment = driver.find_element_by_class_name('content')
 
 '''
@@ -31,6 +50,12 @@ comment = driver.find_element_by_id('__w2_wulkWv6N25_inline_editor_submit')
 comment[3].click()
 comment[3].send_keys('any comment')
 comment[3].submit()
+
+b1 = driver.find_element_by_id('__w2_wjNBfCO525_inline_editor_submit')
+b1.click()
+
+b1 = driver.find_element_by_class_name('form_buttons')
+b2 = b1.find_element_by_class_name('inline_editor_buttons')
 b3 =b2.find_element_by_class_name('submit_button')
 b3.click()
 '''
