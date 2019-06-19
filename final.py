@@ -58,8 +58,8 @@ class Comment:
         #self.driver.find_element_by_xpath("//div[@class='form_buttons']//a[@class='submit_button']").click()
 
         #option with content[2]
-        #click = self.driver.find_elements_by_xpath("//a[@class='submit_button']")
-        #click[2].click()
+        click = self.driver.find_elements_by_xpath("//a[@class='submit_button']")
+        click[2].click()
 
     def edit_excel(self):
         self.book = load_workbook("excel.xlsx")
@@ -88,7 +88,7 @@ class Comment:
         self.setup()
         self.login()
         self.comment()
-        #self.edit_excel()
+        self.edit_excel()
 
         self.teardown()
 
