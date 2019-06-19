@@ -14,12 +14,16 @@ class Comment:
     driver = ''
     global_comment = ''
     url = ''
+    link = ''
     def __init__(self, url, mail_address, password, comments):
 
+        self.book = load_workbook("excel.xlsx")
+        self.ws = self.book.get_sheet_by_name('Main')
+        link = self.ws.cell(row=3, column=2)
         self.url = url #forum url
         self.mail_address = mail_address
         self.password = password
-        self.global_comment = comments
+        self.global_comment = comments + ' ' + "<br>"  + "<a>" +link.value +"</a>"
         self.logged_in = False
 
     def setup(self):
@@ -54,8 +58,8 @@ class Comment:
         #self.driver.find_element_by_xpath("//div[@class='form_buttons']//a[@class='submit_button']").click()
 
         #option with content[2]
-        click = self.driver.find_elements_by_xpath("//a[@class='submit_button']")
-        click[2].click()
+        #click = self.driver.find_elements_by_xpath("//a[@class='submit_button']")
+        #click[2].click()
 
     def edit_excel(self):
         self.book = load_workbook("excel.xlsx")
@@ -84,7 +88,7 @@ class Comment:
         self.setup()
         self.login()
         self.comment()
-        self.edit_excel()
+        #self.edit_excel()
 
         self.teardown()
 
